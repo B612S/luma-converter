@@ -63,6 +63,11 @@ cmake --build build -j$(nproc)            # single target: --target luma_convert
 - Model roles in a delegate are **context properties**: use `fileName`,
   `progress`, `errorKey`, `index` directly. `delegate.fileName` does not resolve
   and silently yields `undefined` (an empty label).
+- A language change re-installs the `QTranslator` and calls
+  `QQmlEngine::retranslate()`. Models built with `qsTr()` (language, bitrate,
+  sample rate, channels, folder mode, log level) are rebuilt; those combos
+  restore the selected index in `onModelChanged`, otherwise they jump to the
+  first item.
 - `SettingsDialog` copies Luma's layout: a plain `Controls.Dialog` at 800x600
   with a 200px category sidebar, a `Flickable` page and a `DialogButtonBox`
   footer. The main window minimum (860x640) keeps it from being clipped; do not

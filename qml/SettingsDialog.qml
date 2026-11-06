@@ -213,17 +213,9 @@ Controls.Dialog {
                                     model: settingsDialog.languageModel
                                     textRole: "label"
                                     currentIndex: settingsDialog.indexOfValue(settingsDialog.languageModel, Config.language)
+                                    onModelChanged: currentIndex = settingsDialog.indexOfValue(settingsDialog.languageModel, Config.language)
                                     onActivated: Config.language = settingsDialog.languageModel[currentIndex].value
                                 }
-                            }
-
-                            Controls.Label {
-                                Layout.columnSpan: 2
-                                Layout.fillWidth: true
-                                text: qsTr("settings_language_restart")
-                                color: Qt.rgba(Kirigami.Theme.textColor.r, Kirigami.Theme.textColor.g, Kirigami.Theme.textColor.b, 0.65)
-                                font.pixelSize: 12
-                                wrapMode: Text.WordWrap
                             }
 
                             Controls.Label {
@@ -284,6 +276,7 @@ Controls.Dialog {
                                 font.pixelSize: 14
                                 model: [qsTr("same_folder"), qsTr("custom_folder")]
                                 currentIndex: Config.outputDir.length > 0 ? 1 : 0
+                                onModelChanged: currentIndex = Config.outputDir.length > 0 ? 1 : 0
                                 onActivated: (index) => {
                                     if (index === 0)
                                         Config.outputDir = "";
@@ -461,6 +454,7 @@ Controls.Dialog {
                                     model: settingsDialog.logLevelModel
                                     textRole: "label"
                                     currentIndex: settingsDialog.indexOfValue(settingsDialog.logLevelModel, Config.logLevel)
+                                    onModelChanged: currentIndex = settingsDialog.indexOfValue(settingsDialog.logLevelModel, Config.logLevel)
                                     onActivated: {
                                         Config.logLevel = settingsDialog.logLevelModel[currentIndex].value;
                                         Queue.refreshTools();

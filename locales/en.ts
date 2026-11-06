@@ -105,7 +105,6 @@
 <message><source>settings_debug</source><translation>Debug</translation></message>
 <message><source>settings_general</source><translation>General</translation></message>
 <message><source>settings_language</source><translation>Language</translation></message>
-<message><source>settings_language_restart</source><translation>A new language is applied after a restart.</translation></message>
 <message><source>settings_log_hint</source><translation>Log file: ~/.cache/luma-converter/converter.log</translation></message>
 <message><source>settings_log_level</source><translation>Log level</translation></message>
 <message><source>settings_notifications</source><translation>Notify when finished</translation></message>

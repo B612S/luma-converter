@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   jobs moved there from the main window.
 - The KDE QML controls style is selected explicitly, so the settings keep the
   Breeze/Kirigami look when the app is started outside the Plasma launcher.
+- Changing the language in Settings is applied immediately; the window, settings
+  dialog and list retranslate without a restart.
 - About is now a page of the settings window, opened from the same Settings
   action as everything else.
 - The application icon uses a flat background instead of a gradient and a
@@ -34,6 +36,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- The interface no longer falls back to raw translation keys when “System” is
+  selected on an unsupported system locale; English is used instead.
 - Adding files or a folder with the toolbar buttons did nothing because the
   dialogs passed `file://` URLs to the queue; they now go through the URL-aware
   entry point.

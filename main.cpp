@@ -24,14 +24,28 @@
 
 namespace {
 
+// The interface strings are translation keys, so a translator is always needed:
+// unsupported system languages fall back to English instead of raw keys.
+QString resolveLanguage(const QString &requested) {
+    if (requested == QLatin1String("en") || requested == QLatin1String("ru"))
+        return requested;
+    if (requested != QLatin1String("auto"))
+        return QStringLiteral("en");
+    const QString system = QLocale::system().name().left(2);
+    return system == QLatin1String("ru") ? QStringLiteral("ru") : QStringLiteral("en");
+}
+
 // Installed translations live next to the binary's data dir; the resource copy
 // always matches this build and is tried first.
-bool installTranslation(QTranslator &translator, const QString &language) {
-    if (language.isEmpty() || language == QLatin1String("auto"))
-        return false;
-    return translator.load(QStringLiteral(":/i18n/") + language + QStringLiteral(".qm"))
-           || translator.load(QStringLiteral("/usr/share/luma-converter/translations/")
-                              + language + QStringLiteral(".qm"));
+void applyLanguage(QTranslator *translator, const QString &requested) {
+    QCoreApplication::removeTranslator(translator);
+    const QString language = resolveLanguage(requested);
+    const bool loaded =
+        translator->load(QStringLiteral(":/i18n/") + language + QStringLiteral(".qm"))
+        || translator->load(QStringLiteral("/usr/share/luma-converter/translations/")
+                            + language + QStringLiteral(".qm"));
+    if (loaded)
+        QCoreApplication::installTranslator(translator);
 }
 
 } // namespace
@@ -88,13 +102,8 @@ int main(int argc, char *argv[]) {
     ConfigManager config;
     Logger::instance().setMode(config.logLevel());
 
-    QTranslator translator;
-    QString language = config.language();
-    if (language == QLatin1String("auto"))
-        language = QLocale::system().name().left(2);
-    const bool translated = installTranslation(translator, language);
-    if (translated)
-        app.installTranslator(&translator);
+    auto *translator = new QTranslator(&app);
+    applyLanguage(translator, config.language());
 
     ConversionQueue queue(&config);
 
@@ -116,6 +125,14 @@ int main(int argc, char *argv[]) {
     engine.load(url);
     if (!created || engine.rootObjects().isEmpty())
         return 1;
+
+    // Switching the language re-installs the translator and lets the engine
+    // re-evaluate every qsTr binding, as Luma does.
+    QObject::connect(&config, &ConfigManager::languageChanged, &app,
+                     [&config, translator, &engine]() {
+                         applyLanguage(translator, config.language());
+                         engine.retranslate();
+                     });
 
     const QStringList initialFiles = parser.positionalArguments();
     if (!initialFiles.isEmpty()) {

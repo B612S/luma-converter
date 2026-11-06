@@ -105,7 +105,6 @@
 <message><source>settings_debug</source><translation>Отладка</translation></message>
 <message><source>settings_general</source><translation>Общие</translation></message>
 <message><source>settings_language</source><translation>Язык</translation></message>
-<message><source>settings_language_restart</source><translation>Новый язык применится после перезапуска.</translation></message>
 <message><source>settings_log_hint</source><translation>Файл журнала: ~/.cache/luma-converter/converter.log</translation></message>
 <message><source>settings_log_level</source><translation>Уровень журнала</translation></message>
 <message><source>settings_notifications</source><translation>Уведомлять о завершении</translation></message>

@@ -87,6 +87,9 @@ RowLayout {
         visible: root.isBitrate
         model: root.bitrateLabels
         currentIndex: root.bitrateIndex
+        // The labels are retranslated when the language changes; keep the
+        // selected bitrate instead of resetting to the first model item.
+        onModelChanged: currentIndex = root.bitrateIndex
         onActivated: Config.bitrate = root.currentFormat.bitrates[currentIndex]
     }
 
@@ -111,6 +114,7 @@ RowLayout {
         model: root.sampleRateModel
         textRole: "label"
         currentIndex: root.indexOfValue(root.sampleRateModel, Config.sampleRate)
+        onModelChanged: currentIndex = root.indexOfValue(root.sampleRateModel, Config.sampleRate)
         onActivated: Config.sampleRate = root.sampleRateModel[currentIndex].value
     }
 
@@ -123,6 +127,7 @@ RowLayout {
         model: root.channelModel
         textRole: "label"
         currentIndex: root.indexOfValue(root.channelModel, Config.channels)
+        onModelChanged: currentIndex = root.indexOfValue(root.channelModel, Config.channels)
         onActivated: Config.channels = root.channelModel[currentIndex].value
     }
 

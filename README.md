@@ -24,7 +24,8 @@ structure, conventions and packaging.
 - **Parallel jobs** (1–16) with per-file progress, speed, pause/resume, stop and
   readable per-file errors.
 - **Desktop notifications** when a batch finishes.
-- English and Russian interface, remembered settings and window size.
+- English and Russian interface, switchable in Settings without a restart,
+  remembered settings and window size.
 
 Settings follow the Luma layout: General, Output, Debug and About. The output
 folder, tags, cover art, overwrite mode and parallel jobs live there, while the
