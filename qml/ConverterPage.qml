@@ -185,13 +185,15 @@ Kirigami.Page {
         id: fileDialog
         title: qsTr("dialog_open_files")
         fileMode: FileDialog.OpenFiles
-        onAccepted: Queue.addFiles(selectedFiles)
+        // The dialogs return URLs; addFiles() expects local paths.
+        onAccepted: Queue.addUrls(selectedFiles)
     }
 
     FolderDialog {
         id: folderDialog
         title: qsTr("dialog_open_folder")
-        onAccepted: Queue.addFolder(selectedFolder)
+        // A URL as well: addUrls() extracts the local path and scans it.
+        onAccepted: Queue.addUrls([selectedFolder])
     }
 
     SettingsDialog {

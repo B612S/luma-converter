@@ -19,7 +19,7 @@
 <message><source>dialog_open_folder</source><translation>Folder with audio files</translation></message>
 <message><source>empty_hint</source><translation>Or press “Add files”. MP3, FLAC, WAV, OGG, Opus, M4A and AAC are supported, and the sound is extracted from video files.</translation></message>
 <message><source>empty_title</source><translation>Drop audio files here</translation></message>
-<message><source>error_ffmpeg_missing</source><translation>FFmpeg was not found. Set its path in the settings.</translation></message>
+<message><source>error_ffmpeg_missing</source><translation>FFmpeg was not found. Install it or add it to PATH.</translation></message>
 <message><source>page_title</source><translation>Audio converter</translation></message>
 <message><source>pause</source><translation>Pause</translation></message>
 <message><source>resume</source><translation>Resume</translation></message>
@@ -98,16 +98,11 @@
 <message><source>normalize</source><translation>Normalize loudness</translation></message>
 <message><source>overwrite</source><translation>Overwrite</translation></message>
 <message><source>parallel_jobs</source><translation>Parallel jobs</translation></message>
-<message><source>reset_output_folder</source><translation>Use the source folder again</translation></message>
+<message><source>custom_folder</source><translation>Custom folder</translation></message>
 <message><source>same_folder</source><translation>Next to the source file</translation></message>
 <message><source>settings_about</source><translation>About</translation></message>
-<message><source>settings_auto</source><translation>Detected automatically</translation></message>
 <message><source>settings_close</source><translation>Close</translation></message>
 <message><source>settings_debug</source><translation>Debug</translation></message>
-<message><source>settings_ffmpeg</source><translation>ffmpeg</translation></message>
-<message><source>settings_ffmpeg_found</source><translation>FFmpeg found</translation></message>
-<message><source>settings_ffmpeg_missing</source><translation>FFmpeg was not found — conversion is unavailable</translation></message>
-<message><source>settings_ffprobe</source><translation>ffprobe</translation></message>
 <message><source>settings_general</source><translation>General</translation></message>
 <message><source>settings_language</source><translation>Language</translation></message>
 <message><source>settings_language_restart</source><translation>A new language is applied after a restart.</translation></message>
@@ -116,7 +111,6 @@
 <message><source>settings_notifications</source><translation>Notify when finished</translation></message>
 <message><source>settings_output</source><translation>Output</translation></message>
 <message><source>settings_overwrite_hint</source><translation>When off, an existing file gets a “(2)” suffix instead of being replaced.</translation></message>
-<message><source>settings_status</source><translation>Status</translation></message>
 <message><source>settings_title</source><translation>Settings</translation></message>
 </context>
 </TS>

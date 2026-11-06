@@ -23,8 +23,6 @@ class ConfigManager : public QObject {
     Q_PROPERTY(QString logLevel READ logLevel WRITE setLogLevel NOTIFY logLevelChanged)
     Q_PROPERTY(int windowWidth READ windowWidth WRITE setWindowWidth NOTIFY windowWidthChanged)
     Q_PROPERTY(int windowHeight READ windowHeight WRITE setWindowHeight NOTIFY windowHeightChanged)
-    Q_PROPERTY(QString ffmpegPath READ ffmpegPath WRITE setFfmpegPath NOTIFY ffmpegPathChanged)
-    Q_PROPERTY(QString ffprobePath READ ffprobePath WRITE setFfprobePath NOTIFY ffprobePathChanged)
 
 public:
     explicit ConfigManager(QObject *parent = nullptr);
@@ -77,12 +75,6 @@ public:
     int windowHeight() const;
     void setWindowHeight(int value);
 
-    QString ffmpegPath() const;
-    void setFfmpegPath(const QString &value);
-
-    QString ffprobePath() const;
-    void setFfprobePath(const QString &value);
-
     Q_INVOKABLE void saveWindowSize(int width, int height);
     Q_INVOKABLE void resetDefaults();
 
@@ -105,8 +97,6 @@ signals:
     void logLevelChanged();
     void windowWidthChanged();
     void windowHeightChanged();
-    void ffmpegPathChanged();
-    void ffprobePathChanged();
 
 private:
     QSettings m_settings;

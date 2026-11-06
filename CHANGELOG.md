@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - The output format, quality, sample rate and channel layout are now selected in
   a bar at the bottom of the window instead of at the top.
+- The output folder is chosen with a source-folder/custom-folder mode; selecting
+  “Next to the source file” resets a custom folder.
 - Settings use the Luma sidebar layout (General, Output, Debug, About) with the
   same 800x600 size, row spacing, lighter category panel and About page; the
   output folder, loudness normalization, tags, cover art, overwrite and parallel
@@ -27,9 +29,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - The separate About window and its toolbar action.
+- The ffmpeg and ffprobe path fields from Settings; both tools are resolved from
+  `PATH`, as they are system dependencies.
 
 ### Fixed
 
+- Adding files or a folder with the toolbar buttons did nothing because the
+  dialogs passed `file://` URLs to the queue; they now go through the URL-aware
+  entry point.
 - Language, notification and log level choices are restored after a restart;
   they were written to a QSettings group that could not be read back.
 

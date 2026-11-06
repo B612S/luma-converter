@@ -19,7 +19,7 @@
 <message><source>dialog_open_folder</source><translation>Папка с аудиофайлами</translation></message>
 <message><source>empty_hint</source><translation>Или нажмите «Добавить файлы». Поддерживаются MP3, FLAC, WAV, OGG, Opus, M4A, AAC, а из видеофайлов извлекается звук.</translation></message>
 <message><source>empty_title</source><translation>Перетащите аудиофайлы сюда</translation></message>
-<message><source>error_ffmpeg_missing</source><translation>FFmpeg не найден. Укажите путь в настройках.</translation></message>
+<message><source>error_ffmpeg_missing</source><translation>FFmpeg не найден. Установите его или добавьте в PATH.</translation></message>
 <message><source>page_title</source><translation>Конвертация аудио</translation></message>
 <message><source>pause</source><translation>Пауза</translation></message>
 <message><source>resume</source><translation>Продолжить</translation></message>
@@ -98,16 +98,11 @@
 <message><source>normalize</source><translation>Нормализация громкости</translation></message>
 <message><source>overwrite</source><translation>Перезаписывать</translation></message>
 <message><source>parallel_jobs</source><translation>Параллельных задач</translation></message>
-<message><source>reset_output_folder</source><translation>Снова писать рядом с исходником</translation></message>
+<message><source>custom_folder</source><translation>Своя папка</translation></message>
 <message><source>same_folder</source><translation>Рядом с исходным файлом</translation></message>
 <message><source>settings_about</source><translation>О программе</translation></message>
-<message><source>settings_auto</source><translation>Определяется автоматически</translation></message>
 <message><source>settings_close</source><translation>Закрыть</translation></message>
 <message><source>settings_debug</source><translation>Отладка</translation></message>
-<message><source>settings_ffmpeg</source><translation>ffmpeg</translation></message>
-<message><source>settings_ffmpeg_found</source><translation>FFmpeg найден</translation></message>
-<message><source>settings_ffmpeg_missing</source><translation>FFmpeg не найден — конвертация недоступна</translation></message>
-<message><source>settings_ffprobe</source><translation>ffprobe</translation></message>
 <message><source>settings_general</source><translation>Общие</translation></message>
 <message><source>settings_language</source><translation>Язык</translation></message>
 <message><source>settings_language_restart</source><translation>Новый язык применится после перезапуска.</translation></message>
@@ -116,7 +111,6 @@
 <message><source>settings_notifications</source><translation>Уведомлять о завершении</translation></message>
 <message><source>settings_output</source><translation>Вывод файлов</translation></message>
 <message><source>settings_overwrite_hint</source><translation>Если выключено, существующий файл получит суффикс «(2)» вместо замены.</translation></message>
-<message><source>settings_status</source><translation>Состояние</translation></message>
 <message><source>settings_title</source><translation>Настройки</translation></message>
 </context>
 </TS>

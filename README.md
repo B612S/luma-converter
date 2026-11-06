@@ -81,8 +81,8 @@ from its row.
 | `~/.config/luma-converter/luma-converter.conf` | settings (INI) |
 | `~/.cache/luma-converter/converter.log` | log (rotated at 1 MiB) |
 
-`ffmpeg` and `ffprobe` are looked up in `PATH`; a custom path can be set in
-**Settings** and it is then used as-is.
+`ffmpeg` and `ffprobe` are resolved from `PATH`; install FFmpeg with the
+distribution's package manager. There is no separate path setting.
 
 ## Translations
 

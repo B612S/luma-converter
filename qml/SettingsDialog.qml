@@ -67,7 +67,6 @@ Controls.Dialog {
         // The custom content item is not focusable by default; without active
         // focus Escape would not reach the popup.
         settingsContent.forceActiveFocus();
-        Queue.refreshTools();
     }
 
     contentItem: RowLayout {
@@ -199,56 +198,6 @@ Controls.Dialog {
                             Layout.fillWidth: true
 
                             Controls.Label {
-                                text: qsTr("settings_ffmpeg")
-                                color: Kirigami.Theme.textColor
-                                font.pixelSize: 14
-                                Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
-                            }
-                            Controls.TextField {
-                                Layout.fillWidth: true
-                                font.pixelSize: 14
-                                placeholderText: qsTr("settings_auto")
-                                text: Config.ffmpegPath
-                                onEditingFinished: {
-                                    Config.ffmpegPath = text;
-                                    Queue.refreshTools();
-                                }
-                            }
-
-                            Controls.Label {
-                                text: qsTr("settings_ffprobe")
-                                color: Kirigami.Theme.textColor
-                                font.pixelSize: 14
-                                Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
-                            }
-                            Controls.TextField {
-                                Layout.fillWidth: true
-                                font.pixelSize: 14
-                                placeholderText: qsTr("settings_auto")
-                                text: Config.ffprobePath
-                                onEditingFinished: {
-                                    Config.ffprobePath = text;
-                                    Queue.refreshTools();
-                                }
-                            }
-
-                            Controls.Label {
-                                text: qsTr("settings_status")
-                                color: Kirigami.Theme.textColor
-                                font.pixelSize: 14
-                                Layout.alignment: Qt.AlignLeft | Qt.AlignTop
-                            }
-                            Controls.Label {
-                                Layout.fillWidth: true
-                                wrapMode: Text.WordWrap
-                                font.pixelSize: 14
-                                color: Queue.ffmpegAvailable ? Kirigami.Theme.positiveTextColor : Kirigami.Theme.negativeTextColor
-                                text: Queue.ffmpegAvailable
-                                    ? (Queue.ffmpegVersion.length > 0 ? Queue.ffmpegVersion : qsTr("settings_ffmpeg_found"))
-                                    : qsTr("settings_ffmpeg_missing")
-                            }
-
-                            Controls.Label {
                                 text: qsTr("settings_language")
                                 color: Kirigami.Theme.textColor
                                 font.pixelSize: 14
@@ -328,27 +277,36 @@ Controls.Dialog {
                                 font.pixelSize: 14
                                 Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
                             }
+                            Controls.ComboBox {
+                                id: outputModeBox
+                                Layout.preferredWidth: settingsDialog.controlWidth + 40
+                                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                                font.pixelSize: 14
+                                model: [qsTr("same_folder"), qsTr("custom_folder")]
+                                currentIndex: Config.outputDir.length > 0 ? 1 : 0
+                                onActivated: (index) => {
+                                    if (index === 0)
+                                        Config.outputDir = "";
+                                    else
+                                        outputDialog.open();
+                                }
+                            }
                             RowLayout {
+                                Layout.columnSpan: 2
                                 Layout.fillWidth: true
                                 spacing: 8
+                                visible: Config.outputDir.length > 0
 
                                 Controls.TextField {
                                     Layout.fillWidth: true
                                     font.pixelSize: 14
                                     readOnly: true
-                                    text: Config.outputDir.length > 0 ? Config.outputDir : qsTr("same_folder")
+                                    text: Config.outputDir
                                 }
                                 Controls.Button {
                                     text: qsTr("browse")
                                     icon.name: "folder-open"
                                     onClicked: outputDialog.open()
-                                }
-                                Controls.ToolButton {
-                                    icon.name: "edit-undo"
-                                    visible: Config.outputDir.length > 0
-                                    onClicked: Config.outputDir = ""
-                                    Controls.ToolTip.visible: hovered
-                                    Controls.ToolTip.text: qsTr("reset_output_folder")
                                 }
                             }
 
@@ -672,6 +630,13 @@ Controls.Dialog {
         }
     }
 
+    Connections {
+        target: Config
+        function onOutputDirChanged() {
+            outputModeBox.currentIndex = Config.outputDir.length > 0 ? 1 : 0;
+        }
+    }
+
     footer: Controls.DialogButtonBox {
         alignment: Qt.AlignRight
 
@@ -687,5 +652,6 @@ Controls.Dialog {
         id: outputDialog
         title: qsTr("dialog_output_folder")
         onAccepted: Config.outputDir = decodeURIComponent(selectedFolder.toString().replace("file://", ""))
+        onRejected: outputModeBox.currentIndex = Config.outputDir.length > 0 ? 1 : 0
     }
 }

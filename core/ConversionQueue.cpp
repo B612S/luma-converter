@@ -29,18 +29,10 @@ const QStringList &inputSuffixes() {
     return suffixes;
 }
 
-QString resolveProgram(const QString &configured, const QString &name) {
-    if (!configured.isEmpty() && QFileInfo(configured).isExecutable())
-        return configured;
-    return QStandardPaths::findExecutable(name);
-}
-
 } // namespace
 
 ConversionQueue::ConversionQueue(ConfigManager *config, QObject *parent)
     : QAbstractListModel(parent), m_config(config) {
-    connect(m_config, &ConfigManager::ffmpegPathChanged, this, &ConversionQueue::refreshTools);
-    connect(m_config, &ConfigManager::ffprobePathChanged, this, &ConversionQueue::refreshTools);
     refreshTools();
     m_options.formatId = m_config->outputFormat();
     m_options.bitrate = m_config->bitrate();
@@ -159,8 +151,8 @@ QVariant ConversionQueue::data(const QModelIndex &index, int role) const {
 }
 
 void ConversionQueue::refreshTools() {
-    const QString ffmpeg = resolveProgram(m_config->ffmpegPath(), QStringLiteral("ffmpeg"));
-    const QString ffprobe = resolveProgram(m_config->ffprobePath(), QStringLiteral("ffprobe"));
+    const QString ffmpeg = QStandardPaths::findExecutable(QStringLiteral("ffmpeg"));
+    const QString ffprobe = QStandardPaths::findExecutable(QStringLiteral("ffprobe"));
     const bool changed = ffmpeg != m_ffmpegPath || ffprobe != m_ffprobePath;
     m_ffmpegPath = ffmpeg;
     m_ffprobePath = ffprobe;

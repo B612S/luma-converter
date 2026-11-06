@@ -24,8 +24,6 @@ constexpr auto kNotifications = "ui/notifications";
 constexpr auto kLogLevel = "ui/log_level";
 constexpr auto kWindowWidth = "window/width";
 constexpr auto kWindowHeight = "window/height";
-constexpr auto kFfmpegPath = "tools/ffmpeg";
-constexpr auto kFfprobePath = "tools/ffprobe";
 
 template <typename T>
 T readSetting(const QSettings &settings, const char *key, const T &fallback) {
@@ -224,28 +222,6 @@ void ConfigManager::setWindowHeight(int value) {
     emit windowHeightChanged();
 }
 
-QString ConfigManager::ffmpegPath() const {
-    return readSetting(m_settings, kFfmpegPath, QString());
-}
-
-void ConfigManager::setFfmpegPath(const QString &value) {
-    if (ffmpegPath() == value)
-        return;
-    writeSetting(m_settings, kFfmpegPath, value);
-    emit ffmpegPathChanged();
-}
-
-QString ConfigManager::ffprobePath() const {
-    return readSetting(m_settings, kFfprobePath, QString());
-}
-
-void ConfigManager::setFfprobePath(const QString &value) {
-    if (ffprobePath() == value)
-        return;
-    writeSetting(m_settings, kFfprobePath, value);
-    emit ffprobePathChanged();
-}
-
 void ConfigManager::saveWindowSize(int width, int height) {
     if (width > 0 && height > 0) {
         setWindowWidth(width);
@@ -273,6 +249,4 @@ void ConfigManager::resetDefaults() {
     emit logLevelChanged();
     emit windowWidthChanged();
     emit windowHeightChanged();
-    emit ffmpegPathChanged();
-    emit ffprobePathChanged();
 }
