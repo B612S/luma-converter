@@ -1,0 +1,9 @@
+build/
+build-*/
+dist/
+src/
+pkg/
+AppDir/
+*.user
+compile_commands.json
+*.pkg.tar.*

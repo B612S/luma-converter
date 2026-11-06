@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <rect x="0" y="0" width="256" height="256" rx="58" ry="58" fill="#4a67d8"/>
+
+  <!-- Conversion cycle: two arcs with tangential arrow heads -->
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.9" stroke-width="12" stroke-linecap="round">
+    <path d="M 64 128 A 64 64 0 0 1 192 128"/>
+    <path d="M 192 128 A 64 64 0 0 1 64 128"/>
+  </g>
+  <g fill="#ffffff">
+    <!-- right head points down -->
+    <path d="M 192 146 L 180 128 L 204 128 Z"/>
+    <!-- left head points up -->
+    <path d="M 64 110 L 52 128 L 76 128 Z"/>
+  </g>
+
+  <!-- Audio waveform -->
+  <g fill="#ffffff">
+    <rect x="95" y="116" width="10" height="24" rx="5"/>
+    <rect x="109" y="106" width="10" height="44" rx="5"/>
+    <rect x="123" y="98" width="10" height="60" rx="5"/>
+    <rect x="137" y="106" width="10" height="44" rx="5"/>
+    <rect x="151" y="116" width="10" height="24" rx="5"/>
+  </g>
+</svg>

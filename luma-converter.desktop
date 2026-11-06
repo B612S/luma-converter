@@ -1,0 +1,18 @@
+[Desktop Entry]
+Type=Application
+Name=Luma Converter
+GenericName=Audio Converter
+GenericName[ru]=Аудиоконвертер
+Comment=Convert audio files with FFmpeg
+Comment[ru]=Конвертация аудиофайлов через FFmpeg
+Exec=luma-converter %F
+TryExec=luma-converter
+Icon=luma-converter
+Terminal=false
+Categories=AudioVideo;Audio;Utility;
+Keywords=Luma;audio;convert;transcode;mp3;flac;opus;ogg;aac;wav;ffmpeg;
+Keywords[ru]=Luma;аудио;конвертер;конвертация;mp3;flac;opus;ogg;aac;wav;ffmpeg;
+MimeType=audio/mpeg;audio/flac;audio/x-flac;audio/aac;audio/x-aac;audio/mp4;audio/x-m4a;audio/ogg;audio/opus;audio/vnd.wave;audio/x-wav;audio/wav;audio/x-ms-wma;audio/x-ape;audio/x-wavpack;audio/x-aiff;video/mp4;video/x-matroska;video/webm;video/quicktime;
+StartupNotify=true
+StartupWMClass=luma-converter
+X-GNOME-UsesNotifications=true
