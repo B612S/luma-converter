@@ -6,6 +6,7 @@
 #include <QLocale>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QQuickStyle>
 #include <QQuickWindow>
 #include <QStyle>
 #include <QStyleFactory>
@@ -43,6 +44,12 @@ int main(int argc, char *argv[]) {
     app.setApplicationVersion(QString::fromLatin1(LUMA_CONVERTER_VERSION));
     QGuiApplication::setDesktopFileName(QStringLiteral("luma-converter"));
     app.setWindowIcon(QIcon(QStringLiteral(":/assets/luma-converter.png")));
+
+    // Match Luma: use the KDE controls style even when the app is started
+    // outside the Plasma launcher, which normally sets this environment
+    // variable. Without it Qt falls back to Basic and the settings lose the
+    // Breeze/Kirigami look.
+    QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
 
     // Breeze drives the Qt Widgets side (file dialogs) and qqc2-desktop-style,
     // which supplies the Kirigami controls look. Creating the style plugin is

@@ -36,8 +36,8 @@ cmake --build build -j$(nproc)            # single target: --target luma_convert
 ## Architecture
 
 - `main.cpp` is the composition root: `ConfigManager`, `ConversionQueue`, the
-  `QQmlApplicationEngine`, the `Breeze` widget style, translations and the
-  positional file arguments.
+  `QQmlApplicationEngine`, the `Breeze` widget style, the `org.kde.desktop` QML
+  controls style, translations and the positional file arguments.
 - `core/ConfigManager` — settings in `~/.config/luma-converter/luma-converter.conf`
   (QSettings INI), exposed with `Q_PROPERTY`s.
 - `core/FormatPreset` — the codec table: id, label, extension, encoder, quality
@@ -66,8 +66,10 @@ cmake --build build -j$(nproc)            # single target: --target luma_convert
 - `SettingsDialog` copies Luma's layout: a plain `Controls.Dialog` at 800x600
   with a 200px category sidebar, a `Flickable` page and a `DialogButtonBox`
   footer. The main window minimum (860x640) keeps it from being clipped; do not
-  lower it without shrinking the dialog. About is the last category, not a
-  separate dialog.
+  lower it without shrinking the dialog. It uses `alternateBackgroundColor` for
+  the page and `backgroundColor` for the sidebar: Luma's translucent surfaces
+  rely on its dark video window behind, while the converter's queue is light.
+  About is the last category, not a separate dialog.
 - The `Breeze` widget style is created only on non-headless platforms: on
   `offscreen`/`minimal` the plugin waits for a desktop session and hangs the
   process.

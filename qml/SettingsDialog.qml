@@ -20,8 +20,13 @@ Controls.Dialog {
     anchors.centerIn: Controls.Overlay.overlay
     closePolicy: Controls.Popup.CloseOnEscape | Controls.Popup.CloseOnPressOutside
 
+    // Luma's dialog is translucent over the dark video window, which makes the
+    // sidebar read as a lighter panel. The queue behind this dialog is light, so
+    // use the two theme surfaces directly instead: the alternate background for
+    // the page, the normal one for the sidebar. This keeps the same contrast
+    // without letting the queue show through the dialog.
     background: Rectangle {
-        color: Kirigami.Theme.backgroundColor
+        color: Kirigami.Theme.alternateBackgroundColor
         radius: 8
         border.color: "transparent"
     }
@@ -78,7 +83,7 @@ Controls.Dialog {
         Rectangle {
             Layout.preferredWidth: 200
             Layout.fillHeight: true
-            color: Kirigami.Theme.alternateBackgroundColor
+            color: Kirigami.Theme.backgroundColor
             radius: 8
 
             ColumnLayout {
@@ -190,7 +195,7 @@ Controls.Dialog {
                         GridLayout {
                             columns: 2
                             columnSpacing: 16
-                            rowSpacing: 12
+                            rowSpacing: 16
                             Layout.fillWidth: true
 
                             Controls.Label {
@@ -251,7 +256,8 @@ Controls.Dialog {
                             }
                             Item {
                                 Layout.preferredWidth: settingsDialog.controlWidth
-                                Layout.preferredHeight: 36
+                                Layout.preferredHeight: 40
+                                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                 Controls.ComboBox {
                                     anchors.fill: parent
                                     font.pixelSize: 14
@@ -280,7 +286,8 @@ Controls.Dialog {
                             }
                             Item {
                                 Layout.preferredWidth: settingsDialog.controlWidth
-                                Layout.preferredHeight: 36
+                                Layout.preferredHeight: 40
+                                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                 Controls.Switch {
                                     anchors.right: parent.right
                                     anchors.verticalCenter: parent.verticalCenter
@@ -312,17 +319,16 @@ Controls.Dialog {
                         GridLayout {
                             columns: 2
                             columnSpacing: 16
-                            rowSpacing: 12
+                            rowSpacing: 16
                             Layout.fillWidth: true
 
                             Controls.Label {
-                                Layout.columnSpan: 2
                                 text: qsTr("label_output")
                                 color: Kirigami.Theme.textColor
                                 font.pixelSize: 14
+                                Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
                             }
                             RowLayout {
-                                Layout.columnSpan: 2
                                 Layout.fillWidth: true
                                 spacing: 8
 
@@ -355,7 +361,8 @@ Controls.Dialog {
                             }
                             Item {
                                 Layout.preferredWidth: settingsDialog.controlWidth
-                                Layout.preferredHeight: 36
+                                Layout.preferredHeight: 40
+                                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                 Controls.Switch {
                                     anchors.right: parent.right
                                     anchors.verticalCenter: parent.verticalCenter
@@ -373,7 +380,8 @@ Controls.Dialog {
                             }
                             Item {
                                 Layout.preferredWidth: settingsDialog.controlWidth
-                                Layout.preferredHeight: 36
+                                Layout.preferredHeight: 40
+                                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                 Controls.Switch {
                                     anchors.right: parent.right
                                     anchors.verticalCenter: parent.verticalCenter
@@ -391,7 +399,8 @@ Controls.Dialog {
                             }
                             Item {
                                 Layout.preferredWidth: settingsDialog.controlWidth
-                                Layout.preferredHeight: 36
+                                Layout.preferredHeight: 40
+                                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                 Controls.Switch {
                                     anchors.right: parent.right
                                     anchors.verticalCenter: parent.verticalCenter
@@ -410,7 +419,8 @@ Controls.Dialog {
                             }
                             Item {
                                 Layout.preferredWidth: settingsDialog.controlWidth
-                                Layout.preferredHeight: 36
+                                Layout.preferredHeight: 40
+                                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                 Controls.Switch {
                                     anchors.right: parent.right
                                     anchors.verticalCenter: parent.verticalCenter
@@ -437,7 +447,8 @@ Controls.Dialog {
                             }
                             Item {
                                 Layout.preferredWidth: settingsDialog.controlWidth
-                                Layout.preferredHeight: 36
+                                Layout.preferredHeight: 40
+                                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                 Controls.SpinBox {
                                     anchors.right: parent.right
                                     anchors.verticalCenter: parent.verticalCenter
@@ -472,7 +483,7 @@ Controls.Dialog {
                         GridLayout {
                             columns: 2
                             columnSpacing: 16
-                            rowSpacing: 12
+                            rowSpacing: 16
                             Layout.fillWidth: true
 
                             Controls.Label {
@@ -484,7 +495,8 @@ Controls.Dialog {
                             }
                             Item {
                                 Layout.preferredWidth: settingsDialog.controlWidth
-                                Layout.preferredHeight: 36
+                                Layout.preferredHeight: 40
+                                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                                 Controls.ComboBox {
                                     anchors.fill: parent
                                     font.pixelSize: 14

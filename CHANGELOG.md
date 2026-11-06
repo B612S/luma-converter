@@ -11,9 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - The output format, quality, sample rate and channel layout are now selected in
   a bar at the bottom of the window instead of at the top.
-- Settings use the Luma sidebar layout (General, Output, Debug, About); the
+- Settings use the Luma sidebar layout (General, Output, Debug, About) with the
+  same 800x600 size, row spacing, lighter category panel and About page; the
   output folder, loudness normalization, tags, cover art, overwrite and parallel
   jobs moved there from the main window.
+- The KDE QML controls style is selected explicitly, so the settings keep the
+  Breeze/Kirigami look when the app is started outside the Plasma launcher.
 - About is now a page of the settings window, opened from the same Settings
   action as everything else.
 - The application icon uses a flat background instead of a gradient and a
