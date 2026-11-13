@@ -1,25 +1,29 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
-  <rect x="0" y="0" width="256" height="256" rx="58" ry="58" fill="#4a67d8"/>
-
-  <!-- Conversion cycle: two arcs with tangential arrow heads -->
-  <g fill="none" stroke="#ffffff" stroke-opacity="0.9" stroke-width="12" stroke-linecap="round">
-    <path d="M 64 128 A 64 64 0 0 1 192 128"/>
-    <path d="M 192 128 A 64 64 0 0 1 64 128"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 64 64">
+  <!-- Luma Converter icon: dark plate with the brand-coloured conversion cycle
+       around a waveform. Papirus idiom on a 64x64 grid: 56-unit plate, 1-unit
+       shadow, 1-unit top light. The two 130-degree arcs end in tangential
+       arrowheads, and their round caps are tucked inside the arrow bases. -->
+  <rect x="4" y="5" width="56" height="56" rx="8" fill="#000000" fill-opacity="0.2"/>
+  <rect x="4" y="4" width="56" height="56" rx="8" fill="#3F444E"/>
+  <path d="M 12 4 H 52 A 8 8 0 0 1 60 12 A 7 7 0 0 0 53 5 H 11 A 7 7 0 0 0 4 12 A 8 8 0 0 1 12 4 Z" fill="#ffffff" fill-opacity="0.08"/>
+  <g opacity="0.25">
+    <g transform="translate(0 1)">
+      <path d="M 18.374 27.041 A 14.5 14.5 0 0 1 44.021 23.892" fill="none" stroke="#000000" stroke-width="3.4" stroke-linecap="round"/>
+      <path d="M 46.657 28.387 L 41.026 25.634 L 47.088 22.134 Z" fill="#000000"/>
+      <path d="M 45.626 36.959 A 14.5 14.5 0 0 1 19.979 40.108" fill="none" stroke="#000000" stroke-width="3.4" stroke-linecap="round"/>
+      <path d="M 17.343 35.613 L 22.974 38.366 L 16.912 41.866 Z" fill="#000000"/>
+      <rect x="26.4" y="27.5" width="3.0" height="9" rx="1.5" fill="#000000"/>
+      <rect x="30.5" y="24.5" width="3.0" height="15" rx="1.5" fill="#000000"/>
+      <rect x="34.6" y="27.5" width="3.0" height="9" rx="1.5" fill="#000000"/>
+    </g>
   </g>
-  <g fill="#ffffff">
-    <!-- right head points down -->
-    <path d="M 192 146 L 180 128 L 204 128 Z"/>
-    <!-- left head points up -->
-    <path d="M 64 110 L 52 128 L 76 128 Z"/>
-  </g>
-
-  <!-- Audio waveform -->
-  <g fill="#ffffff">
-    <rect x="95" y="116" width="10" height="24" rx="5"/>
-    <rect x="109" y="106" width="10" height="44" rx="5"/>
-    <rect x="123" y="98" width="10" height="60" rx="5"/>
-    <rect x="137" y="106" width="10" height="44" rx="5"/>
-    <rect x="151" y="116" width="10" height="24" rx="5"/>
+  <g>
+    <path d="M 18.374 27.041 A 14.5 14.5 0 0 1 44.021 23.892" fill="none" stroke="#8FA6FF" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M 46.657 28.387 L 41.026 25.634 L 47.088 22.134 Z" fill="#8FA6FF"/>
+    <path d="M 45.626 36.959 A 14.5 14.5 0 0 1 19.979 40.108" fill="none" stroke="#8FA6FF" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M 17.343 35.613 L 22.974 38.366 L 16.912 41.866 Z" fill="#8FA6FF"/>
+    <rect x="26.4" y="27.5" width="3.0" height="9" rx="1.5" fill="#8FA6FF"/>
+    <rect x="30.5" y="24.5" width="3.0" height="15" rx="1.5" fill="#8FA6FF"/>
+    <rect x="34.6" y="27.5" width="3.0" height="9" rx="1.5" fill="#8FA6FF"/>
   </g>
 </svg>

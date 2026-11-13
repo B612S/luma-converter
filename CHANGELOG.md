@@ -23,6 +23,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   dialog and list retranslate without a restart.
 - About is now a page of the settings window, opened from the same Settings
   action as everything else.
+- The application icon is redrawn in the Papirus idiom: a dark plate with the
+  brand-coloured conversion ring around a waveform, plus a plate shadow and a
+  top light. `assets/luma-converter.png` is regenerated from the SVG, which is
+  still installed as a scalable icon.
 - The application icon uses a flat background instead of a gradient and a
   smaller conversion ring.
 - The minimum window size grew to 860x640 so the 800x600 settings window is
