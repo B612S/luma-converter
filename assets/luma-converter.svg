@@ -1,29 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 64 64">
-  <!-- Luma Converter icon: dark plate with the brand-coloured conversion cycle
-       around a waveform. Papirus idiom on a 64x64 grid: 56-unit plate, 1-unit
-       shadow, 1-unit top light. The two 130-degree arcs end in tangential
-       arrowheads, and their round caps are tucked inside the arrow bases. -->
-  <rect x="4" y="5" width="56" height="56" rx="8" fill="#000000" fill-opacity="0.2"/>
-  <rect x="4" y="4" width="56" height="56" rx="8" fill="#3F444E"/>
-  <path d="M 12 4 H 52 A 8 8 0 0 1 60 12 A 7 7 0 0 0 53 5 H 11 A 7 7 0 0 0 4 12 A 8 8 0 0 1 12 4 Z" fill="#ffffff" fill-opacity="0.08"/>
-  <g opacity="0.25">
-    <g transform="translate(0 1)">
-      <path d="M 18.374 27.041 A 14.5 14.5 0 0 1 44.021 23.892" fill="none" stroke="#000000" stroke-width="3.4" stroke-linecap="round"/>
-      <path d="M 46.657 28.387 L 41.026 25.634 L 47.088 22.134 Z" fill="#000000"/>
-      <path d="M 45.626 36.959 A 14.5 14.5 0 0 1 19.979 40.108" fill="none" stroke="#000000" stroke-width="3.4" stroke-linecap="round"/>
-      <path d="M 17.343 35.613 L 22.974 38.366 L 16.912 41.866 Z" fill="#000000"/>
-      <rect x="26.4" y="27.5" width="3.0" height="9" rx="1.5" fill="#000000"/>
-      <rect x="30.5" y="24.5" width="3.0" height="15" rx="1.5" fill="#000000"/>
-      <rect x="34.6" y="27.5" width="3.0" height="9" rx="1.5" fill="#000000"/>
-    </g>
+  <!-- Luma Converter icon in the same frameless Papirus idiom as Luma: the
+       brand-periwinkle conversion cycle around a waveform on a transparent
+       64x64 grid, with the same Papirus drop shadow (black at 20%, one unit
+       down) and the same stroke weight as Luma's play mark. The two clockwise
+       arcs end in tangential arrowheads, and their round caps tuck under the
+       arrow bases. -->
+  <g transform="translate(0 1)" opacity="0.2">
+    <path d="M 13.64 26.04 A 19.3 19.3 0 0 1 47.21 20.12" fill="none" stroke="#000000" stroke-width="5.4" stroke-linecap="round"/>
+    <path d="M 49.21 14.88 L 50.9 24.85 L 41.64 20.79 Z" fill="#000000"/>
+    <path d="M 50.36 37.96 A 19.3 19.3 0 0 1 16.79 43.88" fill="none" stroke="#000000" stroke-width="5.4" stroke-linecap="round"/>
+    <path d="M 14.79 49.12 L 13.1 39.15 L 22.36 43.21 Z" fill="#000000"/>
+    <rect x="22.4" y="25.5" width="4.6" height="13" rx="2.3" fill="#000000"/>
+    <rect x="29.7" y="21" width="4.6" height="22" rx="2.3" fill="#000000"/>
+    <rect x="37" y="25.5" width="4.6" height="13" rx="2.3" fill="#000000"/>
   </g>
-  <g>
-    <path d="M 18.374 27.041 A 14.5 14.5 0 0 1 44.021 23.892" fill="none" stroke="#8FA6FF" stroke-width="3.4" stroke-linecap="round"/>
-    <path d="M 46.657 28.387 L 41.026 25.634 L 47.088 22.134 Z" fill="#8FA6FF"/>
-    <path d="M 45.626 36.959 A 14.5 14.5 0 0 1 19.979 40.108" fill="none" stroke="#8FA6FF" stroke-width="3.4" stroke-linecap="round"/>
-    <path d="M 17.343 35.613 L 22.974 38.366 L 16.912 41.866 Z" fill="#8FA6FF"/>
-    <rect x="26.4" y="27.5" width="3.0" height="9" rx="1.5" fill="#8FA6FF"/>
-    <rect x="30.5" y="24.5" width="3.0" height="15" rx="1.5" fill="#8FA6FF"/>
-    <rect x="34.6" y="27.5" width="3.0" height="9" rx="1.5" fill="#8FA6FF"/>
-  </g>
+  <path d="M 13.64 26.04 A 19.3 19.3 0 0 1 47.21 20.12" fill="none" stroke="#8FA6FF" stroke-width="5.4" stroke-linecap="round"/>
+  <path d="M 49.21 14.88 L 50.9 24.85 L 41.64 20.79 Z" fill="#8FA6FF"/>
+  <path d="M 50.36 37.96 A 19.3 19.3 0 0 1 16.79 43.88" fill="none" stroke="#8FA6FF" stroke-width="5.4" stroke-linecap="round"/>
+  <path d="M 14.79 49.12 L 13.1 39.15 L 22.36 43.21 Z" fill="#8FA6FF"/>
+  <rect x="22.4" y="25.5" width="4.6" height="13" rx="2.3" fill="#8FA6FF"/>
+  <rect x="29.7" y="21" width="4.6" height="22" rx="2.3" fill="#8FA6FF"/>
+  <rect x="37" y="25.5" width="4.6" height="13" rx="2.3" fill="#8FA6FF"/>
 </svg>
