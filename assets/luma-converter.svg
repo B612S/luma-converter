@@ -1,24 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
   <!-- Luma Converter icon in the same frameless Papirus idiom as Luma: the
        brand-periwinkle conversion cycle around a waveform on a transparent
        64x64 grid, with the same Papirus drop shadow (black at 20%, one unit
-       down) and the same stroke weight as Luma's play mark. The two clockwise
-       arcs end in tangential arrowheads, and their round caps tuck under the
-       arrow bases. -->
-  <g transform="translate(0 1)" opacity="0.2">
-    <path d="M 13.64 26.04 A 19.3 19.3 0 0 1 47.21 20.12" fill="none" stroke="#000000" stroke-width="5.4" stroke-linecap="round"/>
-    <path d="M 49.21 14.88 L 50.9 24.85 L 41.64 20.79 Z" fill="#000000"/>
-    <path d="M 50.36 37.96 A 19.3 19.3 0 0 1 16.79 43.88" fill="none" stroke="#000000" stroke-width="5.4" stroke-linecap="round"/>
-    <path d="M 14.79 49.12 L 13.1 39.15 L 22.36 43.21 Z" fill="#000000"/>
-    <rect x="22.4" y="25.5" width="4.6" height="13" rx="2.3" fill="#000000"/>
-    <rect x="29.7" y="21" width="4.6" height="22" rx="2.3" fill="#000000"/>
-    <rect x="37" y="25.5" width="4.6" height="13" rx="2.3" fill="#000000"/>
+       down) and the same stroke weight as Luma's play mark. The mark is scaled
+       so its silhouette matches the 56-unit body of a Papirus application
+       icon. The two clockwise arcs end in tangential arrowheads, and their
+       round caps tuck under the arrow bases. -->
+  <g transform="translate(32 32) scale(1.2444) translate(-32 -32.5)">
+    <g transform="translate(0 1)" opacity="0.2">
+      <path d="M 13.64 26.04 A 19.3 19.3 0 0 1 47.21 20.12" fill="none" stroke="#000000" stroke-width="5.4" stroke-linecap="round"/>
+      <path d="M 49.21 14.88 L 50.9 24.85 L 41.64 20.79 Z" fill="#000000"/>
+      <path d="M 50.36 37.96 A 19.3 19.3 0 0 1 16.79 43.88" fill="none" stroke="#000000" stroke-width="5.4" stroke-linecap="round"/>
+      <path d="M 14.79 49.12 L 13.1 39.15 L 22.36 43.21 Z" fill="#000000"/>
+      <rect x="22.4" y="25.5" width="4.6" height="13" rx="2.3" fill="#000000"/>
+      <rect x="29.7" y="21" width="4.6" height="22" rx="2.3" fill="#000000"/>
+      <rect x="37" y="25.5" width="4.6" height="13" rx="2.3" fill="#000000"/>
+    </g>
+    <path d="M 13.64 26.04 A 19.3 19.3 0 0 1 47.21 20.12" fill="none" stroke="#8FA6FF" stroke-width="5.4" stroke-linecap="round"/>
+    <path d="M 49.21 14.88 L 50.9 24.85 L 41.64 20.79 Z" fill="#8FA6FF"/>
+    <path d="M 50.36 37.96 A 19.3 19.3 0 0 1 16.79 43.88" fill="none" stroke="#8FA6FF" stroke-width="5.4" stroke-linecap="round"/>
+    <path d="M 14.79 49.12 L 13.1 39.15 L 22.36 43.21 Z" fill="#8FA6FF"/>
+    <rect x="22.4" y="25.5" width="4.6" height="13" rx="2.3" fill="#8FA6FF"/>
+    <rect x="29.7" y="21" width="4.6" height="22" rx="2.3" fill="#8FA6FF"/>
+    <rect x="37" y="25.5" width="4.6" height="13" rx="2.3" fill="#8FA6FF"/>
   </g>
-  <path d="M 13.64 26.04 A 19.3 19.3 0 0 1 47.21 20.12" fill="none" stroke="#8FA6FF" stroke-width="5.4" stroke-linecap="round"/>
-  <path d="M 49.21 14.88 L 50.9 24.85 L 41.64 20.79 Z" fill="#8FA6FF"/>
-  <path d="M 50.36 37.96 A 19.3 19.3 0 0 1 16.79 43.88" fill="none" stroke="#8FA6FF" stroke-width="5.4" stroke-linecap="round"/>
-  <path d="M 14.79 49.12 L 13.1 39.15 L 22.36 43.21 Z" fill="#8FA6FF"/>
-  <rect x="22.4" y="25.5" width="4.6" height="13" rx="2.3" fill="#8FA6FF"/>
-  <rect x="29.7" y="21" width="4.6" height="22" rx="2.3" fill="#8FA6FF"/>
-  <rect x="37" y="25.5" width="4.6" height="13" rx="2.3" fill="#8FA6FF"/>
 </svg>
